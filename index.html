@@ -3,76 +3,144 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Future Plans Career Games</title>
+<title>Future Plans Career Tools</title>
 
 <style>
 * {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: linear-gradient(180deg,#eef6ff,#f8fbff);
-  color: #1f2937;
+  background: linear-gradient(180deg, #f4ecff, #fbf8ff);
+  color: #2d1f3d;
 }
 
 .site-logo {
   display: block;
-  margin: 20px auto;
+  margin: 24px auto 10px auto;
   max-width: 420px;
+  width: 90%;
 }
 
 .container {
-  max-width: 1100px;
+  max-width: 1150px;
   margin: 30px auto;
   background: #ffffff;
-  border-radius: 18px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.10);
-  padding: 28px;
+  border-radius: 22px;
+  box-shadow: 0 14px 34px rgba(78, 42, 120, 0.12);
+  padding: 32px;
 }
 
 h1 {
   text-align: center;
   margin-top: 0;
-  font-size: 38px;
+  margin-bottom: 12px;
+  font-size: 40px;
+  color: #4b2e83;
 }
 
 .subtitle {
   text-align: center;
-  color: #4b5563;
+  color: #5f5570;
+  line-height: 1.7;
+  margin-bottom: 34px;
+  font-size: 17px;
+}
+
+.choice-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+  margin-bottom: 34px;
+}
+
+.choice-card {
+  background: linear-gradient(180deg, #f6efff, #efe3ff);
+  border: 1px solid #dcc7ff;
+  border-radius: 20px;
+  padding: 28px;
+  text-align: center;
+  box-shadow: 0 8px 18px rgba(104, 64, 165, 0.08);
+}
+
+.choice-card h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 30px;
+  color: #4b2e83;
+}
+
+.choice-card p {
+  color: #5f5570;
   line-height: 1.6;
-  margin-bottom: 30px;
+  margin-bottom: 18px;
+}
+
+.choice-button {
+  display: inline-block;
+  padding: 14px 22px;
+  border-radius: 12px;
+  background: #7c3aed;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  transition: 0.2s ease;
+}
+
+.choice-button:hover {
+  background: #6d28d9;
+  transform: translateY(-1px);
+}
+
+.divider {
+  border: none;
+  border-top: 3px solid #e7d8ff;
+  margin: 40px 0 24px 0;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 32px;
+  color: #4b2e83;
+  margin-bottom: 8px;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #6b5d7a;
+  margin-bottom: 28px;
+  line-height: 1.6;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(2,1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 18px;
 }
 
-@media (max-width:850px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 .game-card {
-  background: #f9fbff;
-  border: 1px solid #dbe7ff;
+  background: #faf7ff;
+  border: 1px solid #e4d7fb;
   border-radius: 16px;
   padding: 22px;
+  box-shadow: 0 6px 14px rgba(101, 67, 151, 0.06);
 }
 
-.game-card h2,
 .game-card h3 {
   margin-top: 0;
   margin-bottom: 8px;
   font-size: 24px;
+  color: #4b2e83;
 }
 
 .game-card p {
-  color: #475569;
+  color: #5f5570;
   line-height: 1.6;
   min-height: 72px;
 }
@@ -83,111 +151,197 @@ h1 {
   text-align: center;
   padding: 12px 14px;
   border-radius: 10px;
-  background: #2563eb;
+  background: #7c3aed;
   color: white;
   text-decoration: none;
   font-weight: 700;
   margin-top: 10px;
+  transition: 0.2s ease;
 }
 
 .button:hover {
-  background: #1d4ed8;
+  background: #6d28d9;
+}
+
+.back-top {
+  text-align: center;
+  margin-top: 24px;
+}
+
+.back-top a {
+  color: #7c3aed;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.back-top a:hover {
+  text-decoration: underline;
 }
 
 .footer-note {
-  margin-top: 28px;
-  padding: 16px;
-  background: #ecfdf5;
-  border: 1px solid #86efac;
+  margin-top: 34px;
+  padding: 18px;
+  background: #f3e8ff;
+  border: 1px solid #d8b4fe;
   border-radius: 14px;
   text-align: center;
   line-height: 1.6;
+  color: #4b2e83;
+  font-weight: 600;
+}
+
+@media (max-width: 850px) {
+  .choice-grid,
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  .choice-card h2 {
+    font-size: 26px;
+  }
+
+  .section-title {
+    font-size: 28px;
+  }
 }
 </style>
 </head>
 
 <body>
+
 <img src="logo.png" class="site-logo" alt="Future Plans Logo">
 
-<div class="container">
+<div class="container" id="top">
 
-<h1>Future Plans Career Games</h1>
+  <h1>Future Plans Career Tools</h1>
 
-<p class="subtitle">
-Choose a game or tool below to explore careers, challenge myths, and access helpful staff resources.
-</p>
+  <p class="subtitle">
+    Choose an area below to get started. Explore career games for engagement or open coaching tools for notes and staff resources.
+  </p>
 
-<div class="grid">
+  <div class="choice-grid">
+    <div class="choice-card">
+      <h2>Games</h2>
+      <p>
+        Interactive activities to help students explore careers, challenge myths, and think through choices in a fun way.
+      </p>
+      <a class="choice-button" href="#games-section">Go to Games</a>
+    </div>
 
-  <div class="game-card">
-    <h2>Guess the Salary</h2>
-    <p>Try to guess what different careers earn and see how close you are.</p>
-    <a class="button" href="https://futureplans4u.github.io/Guess-the-Salary/" target="_blank">
-      Play Guess the Salary
-    </a>
+    <div class="choice-card">
+      <h2>Coaching</h2>
+      <p>
+        Coaching note generators and staff tools to help create clear, consistent notes without wrestling with Excel.
+      </p>
+      <a class="choice-button" href="#coaching-section">Go to Coaching</a>
+    </div>
   </div>
 
-  <div class="game-card">
-    <h2>Myth or Fact</h2>
-    <p>Decide whether each career statement is true or a myth.</p>
-    <a class="button" href="https://futureplans4u.github.io/Myth-or-Fact/" target="_blank">
-      Play Myth or Fact
-    </a>
+  <hr class="divider">
+
+  <section id="games-section">
+    <h2 class="section-title">Games</h2>
+    <p class="section-subtitle">
+      Choose a game below to help students learn about careers, compare options, and think more deeply about their future.
+    </p>
+
+    <div class="grid">
+
+      <div class="game-card">
+        <h3>Guess the Salary</h3>
+        <p>Try to guess what different careers earn and see how close you are.</p>
+        <a class="button" href="https://futureplans4u.github.io/Guess-the-Salary/" target="_blank">
+          Play Guess the Salary
+        </a>
+      </div>
+
+      <div class="game-card">
+        <h3>Myth or Fact</h3>
+        <p>Decide whether each career statement is true or a myth.</p>
+        <a class="button" href="https://futureplans4u.github.io/Myth-or-Fact/" target="_blank">
+          Play Myth or Fact
+        </a>
+      </div>
+
+      <div class="game-card">
+        <h3>Would You Rather</h3>
+        <p>Choose between two mystery career paths based on the good and the reality.</p>
+        <a class="button" href="https://futureplans4u.github.io/Would-You-Rather-Careers/" target="_blank">
+          Play Would You Rather
+        </a>
+      </div>
+
+      <div class="game-card">
+        <h3>2 Facts and 1 Myth</h3>
+        <p>Find the one career myth hidden among the true statements.</p>
+        <a class="button" href="https://futureplans4u.github.io/2-Facts-and-1-Myth/" target="_blank">
+          Play 2 Facts and 1 Myth
+        </a>
+      </div>
+
+      <div class="game-card">
+        <h3>Choose Your Career Path</h3>
+        <p>Explore possibilities and think about where your interests and choices can lead.</p>
+        <a class="button" href="https://futureplans4u.github.io/Choose-Your-Career-Path/" target="_blank">
+          Play Choose Your Career Path
+        </a>
+      </div>
+
+    </div>
+
+    <div class="back-top">
+      <a href="#top">Back to Top</a>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section id="coaching-section">
+    <h2 class="section-title">Coaching</h2>
+    <p class="section-subtitle">
+      Choose a coaching tool below to create notes quickly and keep formatting clean, consistent, and easy to use.
+    </p>
+
+    <div class="grid">
+
+      <div class="game-card">
+        <h3>Coaching Notes Generator</h3>
+        <p>Create coaching notes and copy them directly into Future Plans without using Excel.</p>
+        <a class="button" href="https://futureplans4u.github.io/Coaching-Notes-Tool/" target="_blank">
+          Open Coaching Notes Tool
+        </a>
+      </div>
+
+      <div class="game-card">
+        <h3>Adult Coaching Notes Generator</h3>
+        <p>Create formatted coaching notes for adults.</p>
+        <a class="button" href="https://futureplans4u.github.io/Adult-Coaching-Notes-Generator/" target="_blank">
+          Open Adult Coaching Notes Generator
+        </a>
+      </div>
+
+      <div class="game-card">
+        <h3>Summer Program Coaching</h3>
+        <p>Create formatted coaching notes for a summer program.</p>
+        <a class="button" href="https://futureplans4u.github.io/Summer-Program-Coaching/" target="_blank">
+          Open Summer Program Coaching
+        </a>
+      </div>
+
+    </div>
+
+    <div class="back-top">
+      <a href="#top">Back to Top</a>
+    </div>
+  </section>
+
+  <div class="footer-note">
+    Your future is bigger than you think. Start somewhere, stay curious, and keep building.
   </div>
-
-  <div class="game-card">
-    <h2>Would You Rather</h2>
-    <p>Choose between two mystery career paths based on the good and the reality.</p>
-    <a class="button" href="https://futureplans4u.github.io/Would-You-Rather-Careers/" target="_blank">
-      Play Would You Rather
-    </a>
-  </div>
-
-  <div class="game-card">
-    <h2>2 Facts and 1 Myth</h2>
-    <p>Find the one career myth hidden among the true statements.</p>
-    <a class="button" href="https://futureplans4u.github.io/2-Facts-and-1-Myth/" target="_blank">
-      Play 2 Facts and 1 Myth
-    </a>
-  </div>
-
-  <div class="game-card">
-    <h2>Choose Your Career Path</h2>
-    <p>Explore possibilities and think about where your interests and choices can lead.</p>
-    <a class="button" href="https://futureplans4u.github.io/Choose-Your-Career-Path/" target="_blank">
-      Play Choose Your Career Path
-    </a>
-  </div>
-
-  <div class="game-card">
-    <h2>Coaching Notes Generator</h2>
-    <p>Create coaching notes and copy them directly into Future Plans without using Excel.</p>
-    <a class="button" href="https://futureplans4u.github.io/Coaching-Notes-Tool/" target="_blank">
-      Open Coaching Notes Tool
-    </a>
-  </div>
-
-  <div class="game-card">
-    <h2>Adult Coaching Notes Generator</h2>
-    <p>Create formatted coaching notes for adults.</p>
-    <a class="button" href="https://futureplans4u.github.io/Adult-Coaching-Notes-Generator/" target="_blank">
-      Open Adult Coaching Notes Generator
-    </a>
-  </div>
-
-  <div class="game-card">
-    <h2>Summer Program Coaching</h2>
-    <p>Create formatted coaching notes for a summer program.</p>
-    <a class="button" href="https://futureplans4u.github.io/Summer-Program-Coaching/" target="_blank">
-      Open Summer Program Coaching
-    </a>
-  </div>
-
-</div>
-
-<div class="footer-note">
-Your future is bigger than you think. Start somewhere, stay curious, and keep building.
-</div>
 
 </div>
 
